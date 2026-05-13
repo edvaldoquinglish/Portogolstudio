@@ -1,0 +1,47 @@
+programa
+{
+	inclua biblioteca Util --> util
+
+	funcao inicio()
+	{
+		inteiro vidaJogador = 100
+		inteiro vidaInimigo = 100
+
+		inteiro ataqueJogador
+		inteiro ataqueInimigo
+
+		escreva("=== MINI RPG BATTLE ===\n")
+
+		enquanto(vidaJogador > 0 e vidaInimigo > 0)
+		{
+			// ataque do jogador
+			ataqueJogador = util.sorteia(10, 30)
+			vidaInimigo = vidaInimigo - ataqueJogador
+
+			escreva("Jogador atacou e causou ", ataqueJogador, " de dano\n")
+
+			se(vidaInimigo <= 0)
+			{
+				pare
+			}
+
+			// ataque do inimigo
+			ataqueInimigo = util.sorteia(5, 25)
+			vidaJogador = vidaJogador - ataqueInimigo
+
+			escreva("Inimigo atacou e causou ", ataqueInimigo, " de dano\n")
+
+			escreva("Vida jogador: ", vidaJogador, "\n")
+			escreva("Vida inimigo: ", vidaInimigo, "\n\n")
+		}
+
+		se(vidaJogador > 0)
+		{
+			escreva("Você venceu a batalha! 🏆")
+		}
+		senao
+		{
+			escreva("Você perdeu a batalha! 💀")
+		}
+	}
+}

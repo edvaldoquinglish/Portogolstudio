@@ -1,0 +1,42 @@
+programa
+{
+	inclua biblioteca Util --> util
+
+	funcao inicio()
+	{
+		inteiro jogador
+		inteiro computador
+
+		escreva("=== PEDRA PAPEL TESOURA ===\n")
+		escreva("1 - Pedra\n")
+		escreva("2 - Papel\n")
+		escreva("3 - Tesoura\n")
+		escreva("Escolha: ")
+		leia(jogador)
+
+		computador = util.sorteia(1, 3)
+
+		escreva("\nComputador escolheu: ", computador, "\n")
+
+		se(jogador == computador)
+		{
+			escreva("Empate!")
+		}
+		senao se(jogador == 1 e computador == 3)
+		{
+			escreva("Você ganhou!")
+		}
+		senao se(jogador == 2 e computador == 1)
+		{
+			escreva("Você ganhou!")
+		}
+		senao se(jogador == 3 e computador == 2)
+		{
+			escreva("Você ganhou!")
+		}
+		senao
+		{
+			escreva("Você perdeu!")
+		}
+	}
+}

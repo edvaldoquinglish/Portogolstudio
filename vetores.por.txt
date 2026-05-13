@@ -1,0 +1,37 @@
+programa
+{
+	funcao inicio()
+	{
+		inteiro numeros[5]
+		inteiro i, j, temp
+
+		// Entrada dos números
+		para(i = 0; i < 5; i++)
+		{
+			escreva("Digite o número ", i, ": ")
+			leia(numeros[i])
+		}
+
+		// Ordenação Bubble Sort
+		para(i = 0; i < 5; i++)
+		{
+			para(j = 0; j < 4; j++)
+			{
+				se(numeros[j] > numeros[j + 1])
+				{
+					temp = numeros[j]
+					numeros[j] = numeros[j + 1]
+					numeros[j + 1] = temp
+				}
+			}
+		}
+
+		// Mostrar resultado
+		escreva("\nVetor ordenado:\n")
+
+		para(i = 0; i < 5; i++)
+		{
+			escreva(numeros[i], " ")
+		}
+	}
+}

@@ -1,0 +1,82 @@
+programa
+{
+	funcao inicio()
+	{
+		cadeia nomes[5]
+		cadeia telefones[5]
+
+		inteiro total = 0
+		inteiro opcao
+		inteiro i
+		cadeia busca
+		inteiro encontrado
+
+		enquanto(verdadeiro)
+		{
+			escreva("\n=== AGENDA TELEFÔNICA ===\n")
+			escreva("1 - Cadastrar contato\n")
+			escreva("2 - Listar contatos\n")
+			escreva("3 - Buscar contato\n")
+			escreva("4 - Sair\n")
+			escreva("Escolha: ")
+			leia(opcao)
+
+			escolha(opcao)
+			{
+				caso 1:
+					se(total < 5)
+					{
+						escreva("Nome: ")
+						leia(nomes[total])
+
+						escreva("Telefone: ")
+						leia(telefones[total])
+
+						total++
+					}
+					senao
+					{
+						escreva("Agenda cheia!\n")
+					}
+					pare
+
+				caso 2:
+					escreva("\n=== CONTATOS ===\n")
+
+					para(i = 0; i < total; i++)
+					{
+						escreva(nomes[i], " - ", telefones[i], "\n")
+					}
+					pare
+
+				caso 3:
+					escreva("Digite o nome para buscar: ")
+					leia(busca)
+
+					encontrado = 0
+
+					para(i = 0; i < total; i++)
+					{
+						se(nomes[i] == busca)
+						{
+							escreva("Encontrado: ", nomes[i], " - ", telefones[i], "\n")
+							encontrado = 1
+						}
+					}
+
+					se(encontrado == 0)
+					{
+						escreva("Contato não encontrado!\n")
+					}
+					pare
+
+				caso 4:
+					escreva("Saindo...\n")
+					pare
+
+				caso contrario:
+					escreva("Opção inválida!\n")
+			}
+		}
+	}
+}

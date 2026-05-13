@@ -1,0 +1,62 @@
+programa
+{
+	funcao inicio()
+	{
+		cadeia produtos[3]
+		real precos[3]
+
+		inteiro opcao
+		inteiro produto
+		real total = 0.0
+
+		produtos[0] = "Teclado"
+		produtos[1] = "Mouse"
+		produtos[2] = "Monitor"
+
+		precos[0] = 150.0
+		precos[1] = 80.0
+		precos[2] = 1200.0
+
+		enquanto(verdadeiro)
+		{
+			escreva("\n=== LOJA ===\n")
+			escreva("1 - Ver produtos\n")
+			escreva("2 - Comprar\n")
+			escreva("3 - Finalizar compra\n")
+			escreva("Escolha: ")
+			leia(opcao)
+
+			escolha(opcao)
+			{
+				caso 1:
+					escreva("\n0 - Teclado (150)\n")
+					escreva("1 - Mouse (80)\n")
+					escreva("2 - Monitor (1200)\n")
+					pare
+
+				caso 2:
+					escreva("Digite o código do produto: ")
+					leia(produto)
+
+					se(produto >= 0 e produto <= 2)
+					{
+						total = total + precos[produto]
+						escreva("Produto adicionado ao carrinho!\n")
+					}
+					senao
+					{
+						escreva("Produto inválido!\n")
+					}
+					pare
+
+				caso 3:
+					escreva("\n=== COMPRA FINALIZADA ===\n")
+					escreva("Total: ", total, "\n")
+					pare
+
+				caso contrario:
+					escreva("Opção inválida!\n")
+			}
+		}
+	}
+}

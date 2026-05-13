@@ -1,0 +1,75 @@
+programa
+{
+	funcao inicio()
+	{
+		cadeia nomes[5]
+		real precos[5]
+		inteiro quantidades[5]
+
+		inteiro total = 0
+		inteiro opcao
+		inteiro i
+		real soma
+
+		enquanto(verdadeiro)
+		{
+			escreva("\n=== ESTOQUE ===\n")
+			escreva("1 - Cadastrar produto\n")
+			escreva("2 - Listar produtos\n")
+			escreva("3 - Calcular valor total\n")
+			escreva("4 - Sair\n")
+			escreva("Escolha: ")
+			leia(opcao)
+
+			escolha(opcao)
+			{
+				caso 1:
+					se(total < 5)
+					{
+						escreva("Nome: ")
+						leia(nomes[total])
+
+						escreva("Preço: ")
+						leia(precos[total])
+
+						escreva("Quantidade: ")
+						leia(quantidades[total])
+
+						total++
+					}
+					senao
+					{
+						escreva("Estoque cheio!\n")
+					}
+					pare
+
+				caso 2:
+					escreva("\n=== PRODUTOS ===\n")
+
+					para(i = 0; i < total; i++)
+					{
+						escreva(i, " - ", nomes[i], " | Preço: ", precos[i], " | Qtd: ", quantidades[i], "\n")
+					}
+					pare
+
+				caso 3:
+					soma = 0
+
+					para(i = 0; i < total; i++)
+					{
+						soma = soma + (precos[i] * quantidades[i])
+					}
+
+					escreva("\nValor total do estoque: ", soma)
+					pare
+
+				caso 4:
+					escreva("Saindo...\n")
+					pare
+
+				caso contrario:
+					escreva("Opção inválida!\n")
+			}
+		}
+	}
+}
