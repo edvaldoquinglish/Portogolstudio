@@ -1,0 +1,25 @@
+programa
+{
+	funcao inicio()
+	{
+		inteiro n
+		inteiro a = 0
+		inteiro b = 1
+		inteiro proximo
+		inteiro contador
+
+		escreva("Quantos números deseja mostrar? ")
+		leia(n)
+
+		escreva("\nSequência Fibonacci:\n")
+
+		para(contador = 1; contador <= n; contador++)
+		{
+			escreva(a, " ")
+
+			proximo = a + b
+			a = b
+			b = proximo
+		}
+	}
+}

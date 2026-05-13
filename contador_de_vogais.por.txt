@@ -1,0 +1,28 @@
+programa
+{
+	inclua biblioteca Texto --> txt
+
+	funcao inicio()
+	{
+		cadeia frase
+		inteiro contador = 0
+		inteiro i
+		caracter letra
+
+		escreva("Digite uma frase: ")
+		leia(frase)
+
+		para(i = 0; i < txt.numero_caracteres(frase); i++)
+		{
+			letra = txt.obter_caracter(frase, i)
+
+			se(letra == 'a' ou letra == 'e' ou letra == 'i' ou letra == 'o' ou letra == 'u' ou
+			   letra == 'A' ou letra == 'E' ou letra == 'I' ou letra == 'O' ou letra == 'U')
+			{
+				contador++
+			}
+		}
+
+		escreva("Quantidade de vogais: ", contador)
+	}
+}

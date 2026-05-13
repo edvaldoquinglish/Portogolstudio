@@ -1,0 +1,87 @@
+programa
+{
+	funcao inicio()
+	{
+		cadeia livros[5]
+		cadeia status[5]
+
+		inteiro total = 0
+		inteiro opcao
+		inteiro i
+		cadeia busca
+
+		enquanto(verdadeiro)
+		{
+			escreva("\n=== BIBLIOTECA ===\n")
+			escreva("1 - Cadastrar livro\n")
+			escreva("2 - Listar livros\n")
+			escreva("3 - Emprestar livro\n")
+			escreva("4 - Devolver livro\n")
+			escreva("5 - Sair\n")
+			escreva("Escolha: ")
+			leia(opcao)
+
+			escolha(opcao)
+			{
+				caso 1:
+					se(total < 5)
+					{
+						escreva("Nome do livro: ")
+						leia(livros[total])
+
+						status[total] = "Disponível"
+						total++
+					}
+					senao
+					{
+						escreva("Biblioteca cheia!\n")
+					}
+					pare
+
+				caso 2:
+					escreva("\n=== LIVROS ===\n")
+
+					para(i = 0; i < total; i++)
+					{
+						escreva(i, " - ", livros[i], " | ", status[i], "\n")
+					}
+					pare
+
+				caso 3:
+					escreva("Digite o nome do livro para emprestar: ")
+					leia(busca)
+
+					para(i = 0; i < total; i++)
+					{
+						se(livros[i] == busca e status[i] == "Disponível")
+						{
+							status[i] = "Emprestado"
+							escreva("Livro emprestado com sucesso!\n")
+						}
+					}
+					pare
+
+				caso 4:
+					escreva("Digite o nome do livro para devolver: ")
+					leia(busca)
+
+					para(i = 0; i < total; i++)
+					{
+						se(livros[i] == busca e status[i] == "Emprestado")
+						{
+							status[i] = "Disponível"
+							escreva("Livro devolvido com sucesso!\n")
+						}
+					}
+					pare
+
+				caso 5:
+					escreva("Encerrando sistema...\n")
+					pare
+
+				caso contrario:
+					escreva("Opção inválida!\n")
+			}
+		}
+	}
+}

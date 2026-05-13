@@ -1,0 +1,38 @@
+programa
+{
+	funcao inicio()
+	{
+		cadeia mensagem
+
+		escreva("=== CHAT BOT SIMPLES ===\n")
+		escreva("Digite 'sair' para encerrar\n\n")
+
+		enquanto(verdadeiro)
+		{
+			escreva("Você: ")
+			leia(mensagem)
+
+			se(mensagem == "sair")
+			{
+				escreva("Bot: Até logo!\n")
+				pare
+			}
+			senao se(mensagem == "oi" ou mensagem == "olá")
+			{
+				escreva("Bot: Olá! Como posso te ajudar?\n")
+			}
+			senao se(mensagem == "nome")
+			{
+				escreva("Bot: Eu sou um bot simples em Portugol 😄\n")
+			}
+			senao se(mensagem == "horas")
+			{
+				escreva("Bot: Não tenho relógio interno, mas posso te ajudar com lógica!\n")
+			}
+			senao
+			{
+				escreva("Bot: Não entendi sua mensagem.\n")
+			}
+		}
+	}
+}
