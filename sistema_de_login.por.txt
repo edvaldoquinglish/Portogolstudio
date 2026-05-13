@@ -1,0 +1,23 @@
+programa
+{
+	funcao inicio()
+	{
+		cadeia usuario
+		cadeia senha
+
+		escreva("Digite o usuário: ")
+		leia(usuario)
+
+		escreva("Digite a senha: ")
+		leia(senha)
+
+		se(usuario == "admin" e senha == "1234")
+		{
+			escreva("Login realizado com sucesso!")
+		}
+		senao
+		{
+			escreva("Usuário ou senha incorretos!")
+		}
+	}
+}

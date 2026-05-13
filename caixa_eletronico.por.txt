@@ -1,0 +1,26 @@
+programa
+{
+	funcao inicio()
+	{
+		real saldo = 5000.0
+		real saque
+
+		escreva("=== CAIXA ELETRÔNICO ===\n")
+		escreva("Saldo disponível: ", saldo, "\n\n")
+
+		escreva("Digite o valor do saque: ")
+		leia(saque)
+
+		se(saque <= saldo)
+		{
+			saldo = saldo - saque
+
+			escreva("\nSaque realizado com sucesso!\n")
+			escreva("Novo saldo: ", saldo)
+		}
+		senao
+		{
+			escreva("\nSaldo insuficiente!")
+		}
+	}
+}

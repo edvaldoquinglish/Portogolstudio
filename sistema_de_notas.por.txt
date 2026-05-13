@@ -1,0 +1,32 @@
+programa
+{
+	funcao inicio()
+	{
+		real nota1
+		real nota2
+		real media
+
+		escreva("Digite a primeira nota: ")
+		leia(nota1)
+
+		escreva("Digite a segunda nota: ")
+		leia(nota2)
+
+		media = (nota1 + nota2) / 2.0
+
+		escreva("\nMédia final: ", media, "\n")
+
+		se(media >= 14.0)
+		{
+			escreva("Situação: Aprovado")
+		}
+		senao se(media >= 10.0)
+		{
+			escreva("Situação: Recuperação")
+		}
+		senao
+		{
+			escreva("Situação: Reprovado")
+		}
+	}
+}

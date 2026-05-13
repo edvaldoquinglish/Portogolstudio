@@ -1,0 +1,28 @@
+programa
+{
+	inclua biblioteca Util --> util
+
+	funcao inicio()
+	{
+		inteiro numeroSecreto
+		inteiro tentativa
+
+		numeroSecreto = util.sorteia(1, 10)
+
+		escreva("=== JOGO DA ADIVINHAÇÃO ===\n")
+		escreva("Tente adivinhar o número de 1 a 10\n\n")
+
+		escreva("Digite seu palpite: ")
+		leia(tentativa)
+
+		se(tentativa == numeroSecreto)
+		{
+			escreva("Parabéns! Você acertou!")
+		}
+		senao
+		{
+			escreva("Você errou!\n")
+			escreva("Número secreto era: ", numeroSecreto)
+		}
+	}
+}
